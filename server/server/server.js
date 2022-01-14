@@ -19,13 +19,15 @@ io.on('connection', (socket) => {
 
 server.listen(3000, () => {
   console.log('listening on *:3000');
-  mapGengerator();
+  const map1 = Array(size).fill(-1)
+  const map2 = Array(size).fill(-1)
+  mapGengerator(map1,map2);
   if(verifyMap != 1)
     console.log("error generating map")
 });
 
 const size = 25;
-function mapGengerator() {
+function mapGengerator(map1,map2) {
   var count = 25;
   let NotOccupied = [];
   for (let i = 0; i < count; i++) {
@@ -46,6 +48,7 @@ function mapGengerator() {
   //rest 8 green cards
   let green1 = []
   let green2 = []
+
   let r
   //step1: get random index for first black card for any player
   r = getRandomInt(count--)
@@ -121,8 +124,6 @@ function mapGengerator() {
   //map for player 1
   //let black1 = [blackToG1, blackToB, blackToW1]
 
-  const map1 = Array(size).fill(-1)
-
   //black card
   map1[blackToG1] = 0
   map1[blackToB] = 0
@@ -138,8 +139,6 @@ function mapGengerator() {
   }
 
   //map for player 2
-  const map2 = Array(size).fill(-1)
-
   //black card
   map2[blackToG2] = 0
   map2[blackToB] = 0
@@ -153,9 +152,6 @@ function mapGengerator() {
     if (map2[i] == -1)
       map2[i] = 2
   }
-
-  console.log(map1)
-  console.log(map2)
 
   console.log(verifyMap(map1, map2))
 }

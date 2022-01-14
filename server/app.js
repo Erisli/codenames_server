@@ -76,7 +76,7 @@ function verifyMap(map1, map2) {
   return ret
 }
 
-function mapGengerator() {
+function mapGengerator(map1,map2) {
   var count = 25;
   let NotOccupied = [];
   for (let i = 0; i < count; i++) {
@@ -170,10 +170,6 @@ function mapGengerator() {
   //2: white
 
   //map for player 1
-  //let black1 = [blackToG1, blackToB, blackToW1]
-
-  const map1 = Array(size).fill(-1)
-
   //black card
   map1[blackToG1] = 0
   map1[blackToB] = 0
@@ -189,8 +185,6 @@ function mapGengerator() {
   }
 
   //map for player 2
-  const map2 = Array(size).fill(-1)
-
   //black card
   map2[blackToG2] = 0
   map2[blackToB] = 0
@@ -204,12 +198,14 @@ function mapGengerator() {
     if (map2[i] == -1)
       map2[i] = 2
   }
-
-  console.log(map1)
-  console.log(map2)
-
-  console.log(verifyMap(map1, map2))
 }
+const map1 = Array(size).fill(-1)
+const map2 = Array(size).fill(-1)
+console.log(map1)
+console.log(map2)
 
+mapGengerator(map1,map2);
 
-mapGengerator();
+console.log(map1)
+console.log(map2)
+console.log(verifyMap(map1, map2))
