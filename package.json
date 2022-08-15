@@ -1,0 +1,21 @@
+{
+  "name": "codenames_server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "type":"module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Erisli/codenames_server.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Erisli/codenames_server/issues"
+  },
+  "homepage": "https://github.com/Erisli/codenames_server#readme"
+}
